@@ -92,6 +92,16 @@ public final class MeteoritePlacer
 		this.validSpawn.add( Blocks.snow );
 		this.validSpawn.add( Blocks.stained_hardened_clay );
 
+		for( String name : AEConfig.instance.meteoriteValidSpawnBlocks )
+		{
+			Block block = Block.getBlockFromName( name );
+			
+			if( block != null)
+			{
+				this.validSpawn.add( block );
+			}
+		}
+
 		for( Block skyStoneBlock : this.skyStoneDefinition.maybeBlock().asSet() )
 		{
 			this.invalidSpawn.add( skyStoneBlock );
